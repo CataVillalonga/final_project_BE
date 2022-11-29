@@ -38,7 +38,7 @@ app.route('/api/carts')
   .post(async (req, res) => {
     let cart = await getCart(req.body.username);
     if (cart.length === 0) {
-      const postedCart = await postCart(req.body.username, req.body.products)
+      await postCart(req.body.username, req.body.products)
       cart = await getCart(req.body.username);
       return res
       .json(cart)
@@ -62,7 +62,7 @@ app.route('/api/carts')
   })
   .delete(async (req, res) => {
     await deleteCart(req.body.username);
-    const cart = await getCart(req.body.username);
+    await getCart(req.body.username);
     return res
     .json()
     .status(200)

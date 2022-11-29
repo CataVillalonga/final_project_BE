@@ -9,7 +9,6 @@ const dbName = 'projectdb';
 let client;
 let categories;
 let carts;
-let accounts;
 
 const connectCategory = async () => {
   client = await MongoClient.connect(url, { useNewUrlParser: true }, { useUnifiedTopology: true });
