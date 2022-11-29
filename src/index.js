@@ -5,7 +5,7 @@ import { getCategories, getCart, postCart, updateCart, deleteProduct, deleteCart
 
 const app = express();
 console.log(env.port)
-const port = env.port;
+const port = env.port || 8080;
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
