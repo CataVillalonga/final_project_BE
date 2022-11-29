@@ -1,15 +1,11 @@
 import express from 'express';
-import dotenv from 'dotenv';
-const env = dotenv.config().parsed;
 import { getCategories, getCart, postCart, updateCart, deleteProduct, deleteCart } from './mongodb.js';
 
 const app = express();
-console.log(env.port)
-const port = env.port || 8080;
+const port = process.env.port || 8080;
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
-
 // category routes
 app.route('/api/products')
   .get(async (req, res) => {

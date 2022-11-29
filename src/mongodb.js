@@ -1,9 +1,6 @@
 import { MongoClient } from 'mongodb';
-import dotenv from 'dotenv';
-const env = dotenv.config().parsed;
 
-const url = env.mongoURL;
-console.log(url)
+const url = process.env.mongoURL;
 const dbName = 'projectdb';
 
 let client;
