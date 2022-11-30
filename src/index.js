@@ -1,11 +1,12 @@
 import express from 'express';
 import { getCategories, getCart, postCart, updateCart, deleteProduct, deleteCart } from './mongodb.js';
-
+import cors from 'cors'
 const app = express();
 const port = process.env.port || 8080;
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+app.use(cors())
 // category routes
 app.route('/api/products')
   .get(async (req, res) => {
